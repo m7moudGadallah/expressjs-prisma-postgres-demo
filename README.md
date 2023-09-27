@@ -9,13 +9,20 @@ This is a personal practice project for experimenting with Prisma, Express.js, a
 - [Express.js, Prisma, and PostgreSQL Demo](#expressjs-prisma-and-postgresql-demo)
   - [Table of content](#table-of-content)
   - [Getting Started](#getting-started)
+    - [Clone the repository](#clone-the-repository)
+    - [Install dependencies](#install-dependencies)
+    - [Set up your PostgreSQL database](#set-up-your-postgresql-database)
+    - [Update the database credentials](#update-the-database-credentials)
+    - [Migrate and seed the database](#migrate-and-seed-the-database)
+    - [Start the Server](#start-the-server)
+    - [Testing](#testing)
   - [Usage](#usage)
 
 <!-- /TOC -->
 
 ## Getting Started
 
-**1. Clone the repository**
+### Clone the repository
 
 ```bash
   git clone <repository-url>
@@ -24,7 +31,7 @@ This is a personal practice project for experimenting with Prisma, Express.js, a
 
 **[&uarr; Top](#expressjs-prisma-and-postgresql-demo)**
 
-**2. Install dependencies**
+### Install dependencies
 
 ```bash
   npm install
@@ -32,13 +39,40 @@ This is a personal practice project for experimenting with Prisma, Express.js, a
 
 **[&uarr; Top](#expressjs-prisma-and-postgresql-demo)**
 
-**3. Set up your PostgreSQL database**
+### Set up your PostgreSQL database
 
-**4. Update the database credentials**
+- Open psql shell and connect postgres database on your local machine
+
+```bash
+psql -h localhost -p 5432 -U postgres postgres
+```
+
+- Create database using psql
+
+```sql
+CREATE DATABASE your-db-name;
+
+```
+
+- Create a new user with a password on you postgresql server and give it rule as superuser
+
+```sql
+CREATE USER your-db-user WITH PASSWORD your-password SUPERUSER;
+```
+
+- Exit the `psql` shell
+
+```psql
+\q
+```
+
+**[&uarr; Top](#expressjs-prisma-and-postgresql-demo)**
+
+### Update the database credentials
 
 - In src/config/.env, provide the necessary database credentials:
 
-  ```
+  ```env
   DATABASE_URL=postgresql://<username>:<password>@localhost:5432/<DB>
   DATABASE_DEV=db_name
   DATABASE_PROD=db_name
@@ -48,7 +82,8 @@ This is a personal practice project for experimenting with Prisma, Express.js, a
   ```
 
 - In `prisma/.env``, make sure the database URL matches your PostgreSQL database configuration:
-  ```
+
+  ```env
   # db_url like that 'postgresql://mo:test123@localhost:5432/prisma_demo'
   DATABASE_URL=db_url
   DATABASE_URL_TEST=db_url
@@ -56,7 +91,7 @@ This is a personal practice project for experimenting with Prisma, Express.js, a
 
 **[&uarr; Top](#expressjs-prisma-and-postgresql-demo)**
 
-**5.Migrate and seed the database**
+### Migrate and seed the database
 
 ```bash
   npx prisma migrate dev
@@ -64,14 +99,14 @@ This is a personal practice project for experimenting with Prisma, Express.js, a
 
 **[&uarr; Top](#expressjs-prisma-and-postgresql-demo)**
 
-**6. Start the Server**
+### Start the Server
 
 - **_Development Mode_**: Run npm run `start:dev` to start the server with nodemon for automatic reloading during development.
 - **_Production Mode_**: Run npm run `start:prod` to start the server in production mode.
 
 **[&uarr; Top](#expressjs-prisma-and-postgresql-demo)**
 
-**Testing**
+### Testing
 
 - Run tests using Jest:
   - `npm test`: Run tests in the testing environment.
