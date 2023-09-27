@@ -1,0 +1,55 @@
+### Request default route
+GET http://localhost:3000
+
+######################################Categoreis#######################################
+### Get All Categories
+GET http://localhost:3000/api/v1/categories
+
+### GET Category by ID
+GET http://localhost:3000/api/v1/categories/1
+
+### Create Category
+POST http://localhost:3000/api/v1/categories
+Content-Type: application/json
+
+{
+  "name": "Category 4"
+}
+
+### Update Category by ID
+PATCH http://localhost:3000/api/v1/categories/5
+Content-Type: application/json
+
+{
+  "name": "Category 3"
+}
+
+### Delete Category by ID
+DELETE http://localhost:3000/api/v1/categories/7
+
+######################################Categoreis#######################################
+### Get All Products
+GET http://localhost:3000/api/v1/products
+
+### GET Product by ID
+GET http://localhost:3000/api/v1/products/1
+
+### Create Product
+POST http://localhost:3000/api/v1/products
+Content-Type: application/json
+
+{
+  "name": "Product 1",
+  "categoryId": 1
+}
+
+### Update Product by ID
+PATCH http://localhost:3000/api/v1/products/:id
+Content-Type: application/json
+
+{
+  "price": 100
+}
+
+### Delete Product by ID
+DELETE http://localhost:3000/api/v1/products/2

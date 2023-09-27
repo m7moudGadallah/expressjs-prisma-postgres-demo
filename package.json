@@ -1,0 +1,47 @@
+{
+  "name": "starter-project",
+  "version": "1.0.0",
+  "description": "starter project",
+  "main": "server.js",
+  "scripts": {
+    "test": "export NODE_ENV=testing || SET \"NODE_ENV=testing\" && jest -i --silent",
+    "test:coverage": "export NODE_ENV=testing || SET \"NODE_ENV=testing\" && jest -i --coverage --silent",
+    "start:dev": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon -L server"
+  },
+  "author": "m7moudGadallah",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.3.1",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.0.1",
+    "helmet": "^7.0.0",
+    "hpp": "^0.2.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.5.1",
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.4.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "jest": "^29.7.0",
+    "prettier": "^2.8.4",
+    "prisma": "^5.3.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
