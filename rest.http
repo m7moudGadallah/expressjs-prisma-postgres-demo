@@ -27,7 +27,7 @@ Content-Type: application/json
 ### Delete Category by ID
 DELETE http://localhost:3000/api/v1/categories/7
 
-######################################Categoreis#######################################
+######################################Products#######################################
 ### Get All Products
 GET http://localhost:3000/api/v1/products
 
